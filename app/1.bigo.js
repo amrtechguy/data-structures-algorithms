@@ -1,5 +1,5 @@
 // imports
-import {log} from './helpers.js';
+import {log} from './0.helpers.js';
 
 /**
  * Big O notation rules:
@@ -120,7 +120,7 @@ printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]);
 log('------------------------------');
 
 // The worst case ever (Factorial n) = O(n!)
-// adding a loop for every element in the array
+// adding a nested loop for every element in the array 
 
 
 /**

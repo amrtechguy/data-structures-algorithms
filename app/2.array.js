@@ -1,5 +1,5 @@
 // imports
-import {log} from './helpers.js';
+import {log} from './0.helpers.js';
 
 /**
  * Data Structure: Array (Static & Dynamic)
@@ -155,7 +155,73 @@ log('-----------------------------------------------------------');
  */
 function mergeSortedArrays(arr1, arr2)
 {
-     
+    const mergedArray = [];
+
+    let arr1Index = 0;
+    let arr2Index = 0;
+
+    // [0,3,4,4,6,30,31]
+
+    // while(arr1[arr1Index] || arr2[arr2Index])
+    // {
+    //    if(arr1[arr1Index] < arr2[arr2Index])
+    //    {
+    //         mergedArray.push(arr1[arr1Index]);
+    //         arr1Index++;
+    //    }
+    //    else if(arr1[arr1Index] > arr2[arr2Index])
+    //    {
+    //         mergedArray.push(arr2[arr2Index]);
+    //         arr2Index++;
+    //    }
+    //    else if(arr1[arr1Index] === arr2[arr2Index])
+    //    {
+    //         mergedArray.push([arr1[arr1Index], arr2[arr2Index]]);
+    //         arr1Index++;
+    //         arr2Index++;
+    //    }
+    // }
+
+    return mergedArray;
 }
 
-log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+function mergeSortedArrays2(arr1, arr2)
+{
+    if(arr1.length === 0)
+    {
+        return arr2;
+    }
+
+    if(arr2.length === 0)
+    {
+        return arr1;
+    }
+
+    if(arr1.length === 0 && arr2.length === 0)
+    {
+        return [];
+    }
+
+    const mergedArray = [];
+
+    let arr1Index = 0;
+    let arr2Index = 0;
+
+    while(arr1[arr1Index] || arr2[arr2Index])
+    {
+        if(arr2[arr2Index] === undefined || arr1[arr1Index] < arr2[arr2Index])
+        {
+            mergedArray.push(arr1[arr1Index] );
+            arr1Index++;
+        }
+        else
+        {
+            mergedArray.push(arr2[arr2Index] );
+            arr2Index++;
+        }
+    }
+
+    return mergedArray;
+}
+
+log(mergeSortedArrays2([0, 3, 4, 31], [4, 6, 30, 35]));
